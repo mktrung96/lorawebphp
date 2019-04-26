@@ -1,0 +1,122 @@
+.navbar-green{
+	height: 40px;
+	background-color: #40b7fb;
+}
+.spanLogo{
+    vertical-align: middle;
+    line-height: normal;
+}
+.contentNav{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.titleNav{
+	font-size: 20px;
+	color: white;
+	vertical-align: text-top;
+	padding-left: 20px;
+}
+body{
+	font-family: 'Roboto', sans-serif;
+}
+.language{
+	font-size: 26px;
+}
+.content{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.boxHeader{
+	height: 37px;
+	background: #D8D8D8;
+	color: white;
+	text-align: center;
+}
+
+.boxHeaderGreen{
+	height: 37px;
+	background: #72BF1D;
+	color: white;
+	text-align: center;
+}
+
+.header1{
+	/* Thời gian thực: */
+	font-size: 14px;
+	color: #FFFFFF;
+	display:table;
+	margin-top:10px;
+	width: 100%;
+}
+
+.titleRealtime{
+	background: #f2f2f2;
+	text-align: center;
+}
+.titleRealtime > span {
+	font-size: 16px;
+	color: rgba(0,0,0,0.87);
+}
+.noBorder>tbody>tr>td{
+	border-top: 0px;
+	text-align: center;
+}
+.hightLight{
+	background-color: #F8F8F8;
+}
+
+.textGreen{
+	font-family: Roboto-Medium;
+	font-size: 16px;
+	color: #00E400;
+	line-height: 37px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.50);
+}
+
+.textYellow{
+	font-family: Roboto-Medium;
+	font-size: 16px;
+	color: #FFFF02;
+	line-height: 37px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.50);
+}
+
+.textOrange{
+	font-family: Roboto-Medium;
+	font-size: 16px;
+	color: #FF7E00;
+	line-height: 37px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.50);
+}
+
+.textRed{
+	font-family: Roboto-Medium;
+	font-size: 16px;
+	color: #FF0000;
+	line-height: 37px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.50);
+}
+
+.textBrown{
+	font-family: Roboto-Medium;
+	font-size: 16px;
+	color: #7F0023;
+	line-height: 37px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.50);
+}
+
+.textDetailVertical{
+	margin-top: 13px;
+	font-family: Roboto-Medium;
+	font-size: 16px;
+	color: #4A4A4A;
+}
+.footerCustom{
+	height: 56px;
+}
+
+.textFooter {
+	font-family: Roboto-Medium;
+    font-size: 13px;
+    text-align: center;
+}
