@@ -64,24 +64,19 @@
 	function getDisplayInfo(){
 		$displayInfo = array();
 		global $conn;
-		$sql = "SELECT * from record LIMIT 1";
+		$sql = "SELECT * from record WHERE id = ( SELECT max(id) FROM record) LIMIT 1";
 		$result = mysqli_query($conn, $sql);
 		$record = mysqli_fetch_assoc($result);
-		$co = $record['co'];
-		$co2 = $record['co2'];
-		//$api;
-		if ($co > $co2) {
-			$api =  ROUND($co);
-		}else{
-			$api = ROUND($co2);
-		}
+
+		
+		$api =  ROUND((($record['co']*28*1000/24.45)/30000)*100);
+		
 		$warning = getDescription($api);
 
 		array_push($displayInfo, $api);
 		array_push($displayInfo, $warning);
 		array_push($displayInfo, "pinIcon");
 		array_push($displayInfo, $record['time_record']);
-		array_push($displayInfo, $record['co']);
 		array_push($displayInfo, $record['temp']);
 		array_push($displayInfo, $record['humi']);
 		array_push($displayInfo, $record['co']);
@@ -107,21 +102,21 @@
 			$color = "green";
 			$colorAQI = "#00e400";
 		}
-		if ($data > 50 && data <= 100) {
+		if ($data > 50 && $data <= 100) {
 			$title = "Trung bình";
 			$des = "Nhóm nhạy cảm nên hạn chế ở bên ngoài.";
 			$pinIcon = "/icon_detail_yellow.png";
 			$color = "yellow";
 			$colorAQI = "#ffff02";
 		}
-		if ($data > 100 && data <= 200) {
+		if ($data > 100 && $data <= 200) {
 			$title = "Kém";
 			$des = "Nhóm nhạy cảm cần hạn chế thời gian ở bên ngoài.";
 			$pinIcon = "/icon_detail_orange.png";
 			$color = "orange";
 			$colorAQI = "#ff7e00";
 		}
-		if ($data > 200 && data <= 300) {
+		if ($data > 200 && $data <= 300) {
 			$title = "Xấu";
 			$des = "Nhóm nhạy cảm tránh ra ngoài. Những người khác hạn chế ở bên ngoài.";
 			$pinIcon = "/icon_detail_red.png";

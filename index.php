@@ -136,7 +136,7 @@ style="background-color: white; box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.21); m
 <div id="aqiNomal">
 	<div class="row" style="margin-left: 30px; margin-bottom: 10px">
 		<div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0px;">
-		Chỉ số AQI của từng khí:</div>
+		Nồng độ của từng khí (ppm):</div>
 		<div class="col-md-4 col-sm-4 col-xs-4 text-right"
 		style="padding: 0px;">
 		<a href="Information.do" target="_blank"
@@ -160,7 +160,7 @@ style="background-color: white; box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.21); m
 	</div>
 	<div class="col-md-12" style="margin-top: 5px; padding: 0px;">
 		<div class="col-md-6 col-xs-6 col-sm-6 text-right">
-			<p style="font-size: 20px;" class="titleParam">C2H5-OH</p>
+			<p style="font-size: 20px;" class="titleParam">CO2</p>
 		</div>
 		<div class="col-md-6 col-xs-6 col-sm-6 text-left"
 		style="padding: 0px;">
@@ -171,7 +171,7 @@ style="background-color: white; box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.21); m
 <div class="col-md-4 col-sm-4 col-xs-4" style="padding: 0px;">
 	<div class="col-md-12" style="margin-top: 5px; padding: 0px;">
 		<div class="col-md-6 col-xs-6 col-sm-6 text-right">
-			<p style="font-size: 20px;" class="titleParam">C7H8</p>
+			<p style="font-size: 20px;" class="titleParam">C2H5-OH</p>
 		</div>
 		<div class="col-md-6 col-xs-6 col-sm-6 text-left">
 			<p style="font-size: 20px;" id="toluene"><?php echo $displayInfo['8'] ?><p>
@@ -179,7 +179,7 @@ style="background-color: white; box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.21); m
 		</div>
 		<div class="col-md-12" style="margin-top: 5px; padding: 0px;">
 			<div class="col-md-6 col-xs-6 col-sm-6 text-right">
-				<p style="font-size: 20px;" class="titleParam">C3H6O</p>
+				<p style="font-size: 20px;" class="titleParam">C7H8</p>
 			</div>
 			<div class="col-md-6 col-xs-6 col-sm-6 text-left">
 				<p style="font-size: 20px;" id="acetone"><?php echo $displayInfo['9'] ?><p>
@@ -189,7 +189,7 @@ style="background-color: white; box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.21); m
 		<div class="col-md-4 col-sm-4 col-xs-4" style="padding: 0px;">
 			<div class="col-md-12" style="margin-top: 5px; padding: 0px;">
 				<div class="col-md-6 col-xs-6 col-sm-6 text-right">
-					<p style="font-size: 20px;" class="titleParam">CO2</p>
+					<p style="font-size: 20px;" class="titleParam">C3H6O</p>
 				</div>
 				<div class="col-md-6 col-xs-6 col-sm-6 text-left">
 					<p style="font-size: 20px;" id="co2"><?php echo $displayInfo['10'] ?> </p></div>
@@ -325,7 +325,7 @@ canvas {
 
 <div class="col-md-12 text-right" style="margin-top: 20px">
 	<p style="font-style: italic; font-size: smaller;">* Biểu
-	đồ sử dụng giá trị AQI quy đổi</p>
+	đồ sử dụng đơn vị đo nồng độ ppm</p>
 </div>
 </div>
 
@@ -600,22 +600,23 @@ vấn dữ liệu đo</h3>
 		colorAQI = new Array();
 		<?php foreach ($commonChart['1'] as $key => $statDate) { ?>
 			dataChart1.push("<?php echo $statDate ?>");
+			colorAQI.push('#bdbdbd');
 
-			<?php if ( $statDate <=50) { ?>
-				colorAQI.push('#00e400');
-			<?php  } ?>
-			<?php if ( $statDate > 50 && data <= 100 ) { ?>
-			colorAQI.push('#ffff02');
-			<?php } ?>
-			<?php if ( $statDate > 100 && data <= 200 ) { ?>
-			colorAQI.push('#ff7e00');
-			<?php  }?>
-			<?php if ( $statDate > 200 && data <= 300 ) { ?>
-			colorAQI.push('#ff0000');
-			<?php } ?>
-			<?php if($statDate > 300) { ?>
-			colorAQI.push('#7f0023');
-			<?php } ?>
+			// <?php if ( $statDate <=50) { ?>
+			// 	colorAQI.push('#00e400');
+			// <?php  } ?>
+			// <?php if ( $statDate > 50 && data <= 100 ) { ?>
+			// colorAQI.push('#ffff02');
+			// <?php } ?>
+			// <?php if ( $statDate > 100 && data <= 200 ) { ?>
+			// colorAQI.push('#ff7e00');
+			// <?php  }?>
+			// <?php if ( $statDate > 200 && data <= 300 ) { ?>
+			// colorAQI.push('#ff0000');
+			// <?php } ?>
+			// <?php if($statDate > 300) { ?>
+			// colorAQI.push('#7f0023');
+			// <?php } ?>
 		<?php } ?>
 
 		// khai báo chart 1
